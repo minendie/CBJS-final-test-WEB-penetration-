@@ -7,6 +7,9 @@ if (isset($_GET['action'])) {
         case 'transfer_money':
             if (isset($_POST['sender_id'])) {
                 $user = getinfoFromUserid($_POST['sender_id']);
+                $str = "SELECT id, username, money, image, enc_credit_card, bio FROM users WHERE id=" . $id . " LIMIT 1";
+                var_dump($str);
+                exit();
             } else {
                 $error = "Something is wrong";
             }

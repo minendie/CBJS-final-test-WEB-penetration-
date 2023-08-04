@@ -32,9 +32,6 @@ function selectOne($query)
 }
 
 function getUserFromUsername($username) {
-    $str = "SELECT id, username, password FROM users WHERE username='" . $username . "' LIMIT 1";
-    var_dump($str);
-    exit();
     return selectOne("SELECT id, username, password FROM users WHERE username='" . $username . "' LIMIT 1");
 }
 

@@ -7,11 +7,7 @@ if (isset($_GET["action"])) {
     switch ($action) {
         case 'public_info': {
                 if (isset($_GET['id'])) {
-                    $str = "SELECT id, username, money, image, enc_credit_card, bio FROM users WHERE id=" . $id . " LIMIT 1";
-                    var_dump($str);
-                    exit();
                     $data = getInfoFromUserId($_GET['id']);
-                    
                     if ($data) {
                         unset($data['enc_credit_card']);
                         echo msgToJSON(200, $data);
